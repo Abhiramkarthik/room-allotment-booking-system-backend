@@ -1,10 +1,8 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const connectDB = async () => {
-  await mongoose.connect("YOUR_MONGODB_ATLAS_URL");
+  await mongoose.connect(process.env.MONGO_URL);
   console.log("MongoDB Connected");
 };
 
-module.exports = connectDB;
-
-await mongoose.connect(process.env.MONGO_URL);
+export default connectDB;

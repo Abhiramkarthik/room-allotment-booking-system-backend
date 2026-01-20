@@ -1,5 +1,6 @@
-const express = require("express");
-const Room = require("../models/Room");
+import express from "express";
+import Room from "../models/Room.js";
+
 const router = express.Router();
 
 router.post("/add", async (req, res) => {
@@ -13,4 +14,4 @@ router.get("/", async (req, res) => {
   res.json(rooms);
 });
 
-module.exports = router;
+export default router;

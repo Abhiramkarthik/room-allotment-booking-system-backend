@@ -1,5 +1,6 @@
-const express = require("express");
-const Booking = require("../models/Booking");
+import express from "express";
+import Booking from "../models/Booking.js";
+
 const router = express.Router();
 
 router.post("/book", async (req, res) => {
@@ -21,9 +22,4 @@ router.post("/book", async (req, res) => {
   res.json({ message: "Room booked successfully" });
 });
 
-router.get("/:roomId", async (req, res) => {
-  const bookings = await Booking.find({ roomId: req.params.roomId });
-  res.json(bookings);
-});
-
-module.exports = router;
+export default router;
